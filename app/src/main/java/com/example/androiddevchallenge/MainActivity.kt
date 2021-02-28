@@ -163,7 +163,6 @@ fun PuppyList(navController: NavHostController) {
                                                 modifier = Modifier.fillMaxSize(),
                                                 contentScale = ContentScale.Crop,
                                             )
-
                                         }
                                     }
 
@@ -196,7 +195,6 @@ fun PuppyList(navController: NavHostController) {
                                                 val sexIcon = if (puppy.sex == Sex.Male)
                                                     "https://icon-library.com/images/male-gender-icon/male-gender-icon-14.jpg" else
                                                     "https://static.thenounproject.com/png/390695-200.png"
-
 
                                                 CoilImage(
                                                     data = sexIcon,
@@ -233,185 +231,189 @@ fun PuppyList(navController: NavHostController) {
                                                 textAlign = TextAlign.Center
                                             )
                                         }
-
                                     }
                                 }
                             }
                         }
-
                     }
-                })
+                }
+            )
         },
         topBar = {
-            TopAppBar(title = {
-                Text(
-                    "Diamond Dogs"
-                )
-            })
-        })
+            TopAppBar(
+                title = {
+                    Text(
+                        "Diamond Dogs"
+                    )
+                }
+            )
+        }
+    )
 }
 
 @Composable
 fun PuppyDetail(navController: NavHostController, puppyName: String?) {
     val puppy = listOfPuppies.find { it.name == puppyName }
 
-    Scaffold(content = {
-        Column(modifier = Modifier.fillMaxSize()) {
-            Box() {
-                CoilImage(
-                    data = puppy!!.profilePic,
-                    contentDescription = "",
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .wrapContentHeight(),
-                    contentScale = ContentScale.Fit,
-                )
+    Scaffold(
+        content = {
+            Column(modifier = Modifier.fillMaxSize()) {
+                Box() {
+                    CoilImage(
+                        data = puppy!!.profilePic,
+                        contentDescription = "",
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .wrapContentHeight(),
+                        contentScale = ContentScale.Fit,
+                    )
 
-                TopAppBar(
-                    backgroundColor = Color(0x66000000),
-                    navigationIcon = {
-                        IconButton(onClick = { navController.popBackStack() }) {
-                            Image(
-                                imageVector = Icons.Default.ArrowBack,
-                                contentDescription = "Back",
-                                colorFilter = ColorFilter.tint(Color.White)
+                    TopAppBar(
+                        backgroundColor = Color(0x66000000),
+                        navigationIcon = {
+                            IconButton(onClick = { navController.popBackStack() }) {
+                                Image(
+                                    imageVector = Icons.Default.ArrowBack,
+                                    contentDescription = "Back",
+                                    colorFilter = ColorFilter.tint(Color.White)
+                                )
+                            }
+                        },
+                        elevation = 0.dp,
+                        title = {
+                            Text(
+                                puppy!!.name
                             )
                         }
-                    },
-                    elevation = 0.dp,
-                    title = {
-                        Text(
-                            puppy!!.name
-                        )
-                    })
-            }
-
-            var selectTabIndex by remember { mutableStateOf(0) }
-            TabRow(
-                selectedTabIndex = selectTabIndex,
-                backgroundColor = MaterialTheme.colors.primary,
-                modifier = Modifier.requiredHeight(56.dp),
-                indicator = { tabPositions ->
-                    TabRowDefaults.Indicator(
-                        Modifier.tabIndicatorOffset(tabPositions[selectTabIndex]),
-                        height = 3.dp,
-                        color = Color.White
                     )
                 }
+
+                var selectTabIndex by remember { mutableStateOf(0) }
+                TabRow(
+                    selectedTabIndex = selectTabIndex,
+                    backgroundColor = MaterialTheme.colors.primary,
+                    modifier = Modifier.requiredHeight(56.dp),
+                    indicator = { tabPositions ->
+                        TabRowDefaults.Indicator(
+                            Modifier.tabIndicatorOffset(tabPositions[selectTabIndex]),
+                            height = 3.dp,
+                            color = Color.White
+                        )
+                    }
+                ) {
+                    Tab(selected = selectTabIndex == 0, onClick = { selectTabIndex = 0 }) {
+                        Text(
+                            text = "Bio",
+                            style = MaterialTheme.typography.button,
+                            modifier = Modifier.padding(vertical = 8.dp)
+                        )
+                    }
+
+                    Tab(selected = selectTabIndex == 1, onClick = { selectTabIndex = 1 }) {
+                        Text(
+                            text = "Stats",
+                            style = MaterialTheme.typography.button,
+                            modifier = Modifier.padding(vertical = 8.dp)
+                        )
+                    }
+
+                    Tab(selected = selectTabIndex == 2, onClick = { selectTabIndex = 2 }) {
+                        Text(
+                            text = "History",
+                            style = MaterialTheme.typography.button,
+                            modifier = Modifier.padding(vertical = 8.dp)
+                        )
+                    }
+                }
+
+                when (selectTabIndex) {
+                    0 -> {
+                        Column(modifier = Modifier.padding(16.dp)) {
+                            Text(
+                                text = puppy!!.bio,
+                                color = Color.White,
+                                modifier = Modifier
+                                    .padding(2.dp, 2.dp)
+                                    .fillMaxWidth(),
+                                style = MaterialTheme.typography.body1,
+                            )
+                        }
+                    }
+                    1 -> {
+                        Column(modifier = Modifier.padding(16.dp)) {
+                            Text(
+                                text = "Breed: ${puppy!!.breed}",
+                                color = Color.White,
+                                maxLines = 1,
+                                modifier = Modifier
+                                    .padding(2.dp, 2.dp)
+                                    .fillMaxWidth(),
+                                style = MaterialTheme.typography.body1,
+                            )
+                            Text(
+                                text = "Birthday: ${puppy!!.birthdate}",
+                                color = Color.White,
+                                maxLines = 1,
+                                modifier = Modifier
+                                    .padding(2.dp, 2.dp)
+                                    .fillMaxWidth(),
+                                style = MaterialTheme.typography.body1,
+                            )
+                            Text(
+                                text = "Age: ${puppy!!.age}",
+                                color = Color.White,
+                                maxLines = 1,
+                                modifier = Modifier
+                                    .padding(2.dp, 2.dp)
+                                    .fillMaxWidth(),
+                                style = MaterialTheme.typography.body1,
+                            )
+                            Text(
+                                text = "Weight: ${puppy!!.weight}",
+                                color = Color.White,
+                                maxLines = 1,
+                                modifier = Modifier
+                                    .padding(2.dp, 2.dp)
+                                    .fillMaxWidth(),
+                                style = MaterialTheme.typography.body1,
+                            )
+                        }
+                    }
+                    2 -> {
+                        Column(modifier = Modifier.padding(16.dp)) {
+                            Text(
+                                text = "Vaccine History: ",
+                                color = Color.White,
+                                maxLines = 1,
+                                modifier = Modifier
+                                    .padding(2.dp, 2.dp)
+                                    .fillMaxWidth(),
+                                style = MaterialTheme.typography.body1,
+                            )
+                        }
+                    }
+                }
+            }
+        },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = { /*TODO*/ },
+                shape = CutCornerShape(50),
+                backgroundColor = MaterialTheme.colors.primary
             ) {
-                Tab(selected = selectTabIndex == 0, onClick = { selectTabIndex = 0 }) {
-                    Text(
-                        text = "Bio",
-                        style = MaterialTheme.typography.button,
-                        modifier = Modifier.padding(vertical = 8.dp)
-                    )
-                }
-
-                Tab(selected = selectTabIndex == 1, onClick = { selectTabIndex = 1 }) {
-                    Text(
-                        text = "Stats",
-                        style = MaterialTheme.typography.button,
-                        modifier = Modifier.padding(vertical = 8.dp)
-                    )
-                }
-
-                Tab(selected = selectTabIndex == 2, onClick = { selectTabIndex = 2 }) {
-                    Text(
-                        text = "History",
-                        style = MaterialTheme.typography.button,
-                        modifier = Modifier.padding(vertical = 8.dp)
-                    )
-                }
+                Text(text = "Adopt", modifier = Modifier.padding(8.dp))
             }
-
-            when (selectTabIndex) {
-                0 -> {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text(
-                            text = puppy!!.bio,
-                            color = Color.White,
-                            modifier = Modifier
-                                .padding(2.dp, 2.dp)
-                                .fillMaxWidth(),
-                            style = MaterialTheme.typography.body1,
-                        )
-                    }
-                }
-                1 -> {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text(
-                            text = "Breed: ${puppy!!.breed}",
-                            color = Color.White,
-                            maxLines = 1,
-                            modifier = Modifier
-                                .padding(2.dp, 2.dp)
-                                .fillMaxWidth(),
-                            style = MaterialTheme.typography.body1,
-                        )
-                        Text(
-                            text = "Birthday: ${puppy!!.birthdate}",
-                            color = Color.White,
-                            maxLines = 1,
-                            modifier = Modifier
-                                .padding(2.dp, 2.dp)
-                                .fillMaxWidth(),
-                            style = MaterialTheme.typography.body1,
-                        )
-                        Text(
-                            text = "Age: ${puppy!!.age}",
-                            color = Color.White,
-                            maxLines = 1,
-                            modifier = Modifier
-                                .padding(2.dp, 2.dp)
-                                .fillMaxWidth(),
-                            style = MaterialTheme.typography.body1,
-                        )
-                        Text(
-                            text = "Weight: ${puppy!!.weight}",
-                            color = Color.White,
-                            maxLines = 1,
-                            modifier = Modifier
-                                .padding(2.dp, 2.dp)
-                                .fillMaxWidth(),
-                            style = MaterialTheme.typography.body1,
-                        )
-                    }
-                }
-                2 -> {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text(
-                            text = "Vaccine History: ",
-                            color = Color.White,
-                            maxLines = 1,
-                            modifier = Modifier
-                                .padding(2.dp, 2.dp)
-                                .fillMaxWidth(),
-                            style = MaterialTheme.typography.body1,
-                        )
-                    }
-                }
-            }
-
-
-        }
-
-    }, floatingActionButton = {
-        FloatingActionButton(
-            onClick = { /*TODO*/ },
-            shape = CutCornerShape(50),
-            backgroundColor = MaterialTheme.colors.primary
-        ) {
-            Text(text = "Adopt", modifier = Modifier.padding(8.dp))
-        }
-    },
+        },
         floatingActionButtonPosition = FabPosition.Center,
         isFloatingActionButtonDocked = true,
         bottomBar = {
-            BottomAppBar(cutoutShape = CutCornerShape(50), content = {
-
-            })
-        })
-
+            BottomAppBar(
+                cutoutShape = CutCornerShape(50),
+                content = {
+                }
+            )
+        }
+    )
 }
 
 @ExperimentalFoundationApi

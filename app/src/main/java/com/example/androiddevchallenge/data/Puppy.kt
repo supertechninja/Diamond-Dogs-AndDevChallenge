@@ -1,5 +1,23 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge.data
 
+/**
+ *
+ */
 data class Puppy(
     val name: String,
     val sex: Sex,
@@ -11,7 +29,7 @@ data class Puppy(
     val bio: String
 )
 
-enum class Sex { Male, Female}
+enum class Sex { Male, Female }
 
 val listOfPuppies = listOf(
     Puppy(
@@ -115,7 +133,3 @@ val listOfPuppies = listOf(
         bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique fermentum dignissim. Suspendisse ut risus tristique, accumsan est eu, sagittis ipsum. Integer et nunc sit amet leo maximus vestibulum. Etiam ut neque eget felis molestie auctor. Nam non libero purus. Aenean eu nibh efficitur, sollicitudin ipsum id, volutpat nisl. Maecenas nisi dui, semper ac scelerisque sit amet, luctus sit amet mi. Quisque tellus arcu, accumsan et fringilla quis, pellentesque nec tortor. Curabitur eu ante nunc. Morbi et ligula dui. Pellentesque velit nibh, tempus at vehicula nec, gravida vitae ipsum. Proin justo nunc, interdum in diam vitae, feugiat tempus purus. Suspendisse potenti. Nunc urna metus, varius imperdiet lacus quis, pretium placerat nulla. Duis vel aliquet ante. Praesent nec arcu vitae odio dapibus molestie eget ut felis."
     )
 )
-
-
-
-
