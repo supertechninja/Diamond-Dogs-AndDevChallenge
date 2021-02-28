@@ -103,9 +103,6 @@ fun PuppyList(navController: NavHostController) {
                                     .clip(RoundedCornerShape(10))
                                     .pointerInput(Unit) {
                                         detectTapGestures(
-                                            onLongPress = {
-                                                showCardDetail = true
-                                            },
                                             onTap = {
                                                 navController.navigate("detail/${puppy.name}")
                                             }
@@ -131,14 +128,6 @@ fun PuppyList(navController: NavHostController) {
                                                 Color.DarkGray,
                                                 CutCornerShape(50)
                                             )
-
-                                            .pointerInput(Unit) {
-                                                detectTapGestures(
-                                                    onLongPress = {
-                                                        showCardDetail = true
-                                                    }
-                                                )
-                                            }
                                     ) {
                                         Box(
                                             contentAlignment = Alignment.BottomCenter,
@@ -301,7 +290,7 @@ fun PuppyDetail(navController: NavHostController, puppyName: String?) {
                     )
                 }
 
-                Tab(selected = selectTabIndex == 1, onClick = { selectTabIndex = 1 }) {
+                Tab(selected = selectTabIndex == 2, onClick = { selectTabIndex = 2 }) {
                     Text(
                         text = "History",
                         style = MaterialTheme.typography.button,
@@ -324,16 +313,55 @@ fun PuppyDetail(navController: NavHostController, puppyName: String?) {
                     }
                 }
                 1 -> {
-                    Column() {
+                    Column(modifier = Modifier.padding(16.dp)) {
                         Text(
-                            text = puppy!!.birthdate,
+                            text = "Breed: ${puppy!!.breed}",
                             color = Color.White,
                             maxLines = 1,
                             modifier = Modifier
                                 .padding(2.dp, 2.dp)
                                 .fillMaxWidth(),
                             style = MaterialTheme.typography.body1,
-                            textAlign = TextAlign.Center
+                        )
+                        Text(
+                            text = "Birthday: ${puppy!!.birthdate}",
+                            color = Color.White,
+                            maxLines = 1,
+                            modifier = Modifier
+                                .padding(2.dp, 2.dp)
+                                .fillMaxWidth(),
+                            style = MaterialTheme.typography.body1,
+                        )
+                        Text(
+                            text = "Age: ${puppy!!.age}",
+                            color = Color.White,
+                            maxLines = 1,
+                            modifier = Modifier
+                                .padding(2.dp, 2.dp)
+                                .fillMaxWidth(),
+                            style = MaterialTheme.typography.body1,
+                        )
+                        Text(
+                            text = "Weight: ${puppy!!.weight}",
+                            color = Color.White,
+                            maxLines = 1,
+                            modifier = Modifier
+                                .padding(2.dp, 2.dp)
+                                .fillMaxWidth(),
+                            style = MaterialTheme.typography.body1,
+                        )
+                    }
+                }
+                2 -> {
+                    Column(modifier = Modifier.padding(16.dp)) {
+                        Text(
+                            text = "Vaccine History: ",
+                            color = Color.White,
+                            maxLines = 1,
+                            modifier = Modifier
+                                .padding(2.dp, 2.dp)
+                                .fillMaxWidth(),
+                            style = MaterialTheme.typography.body1,
                         )
                     }
                 }

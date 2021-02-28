@@ -20,7 +20,7 @@ val listOfPuppies = listOf(
         birthdate = "01/18/1989",
         age = "6 mo",
         profilePic = "https://cdn.pixabay.com/photo/2016/05/09/10/42/weimaraner-1381186__340.jpg",
-        weight = "16 lbs",
+        weight = "8 lbs",
         breed = "Weimaraner",
         bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique fermentum dignissim. Suspendisse ut risus tristique, accumsan est eu, sagittis ipsum. Integer et nunc sit amet leo maximus vestibulum. Etiam ut neque eget felis molestie auctor. Nam non libero purus. Aenean eu nibh efficitur, sollicitudin ipsum id, volutpat nisl. Maecenas nisi dui, semper ac scelerisque sit amet, luctus sit amet mi. Quisque tellus arcu, accumsan et fringilla quis, pellentesque nec tortor. Curabitur eu ante nunc. Morbi et ligula dui. Pellentesque velit nibh, tempus at vehicula nec, gravida vitae ipsum. Proin justo nunc, interdum in diam vitae, feugiat tempus purus. Suspendisse potenti. Nunc urna metus, varius imperdiet lacus quis, pretium placerat nulla. Duis vel aliquet ante. Praesent nec arcu vitae odio dapibus molestie eget ut felis."
     ),
@@ -30,7 +30,7 @@ val listOfPuppies = listOf(
         birthdate = "01/18/1989",
         age = "9 mo",
         profilePic = "https://cdn.pixabay.com/photo/2015/12/08/00/52/puppy-1082141_960_720.jpg",
-        weight = "16 lbs",
+        weight = "10 lbs",
         breed = "Labrador",
         bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique fermentum dignissim. Suspendisse ut risus tristique, accumsan est eu, sagittis ipsum. Integer et nunc sit amet leo maximus vestibulum. Etiam ut neque eget felis molestie auctor. Nam non libero purus. Aenean eu nibh efficitur, sollicitudin ipsum id, volutpat nisl. Maecenas nisi dui, semper ac scelerisque sit amet, luctus sit amet mi. Quisque tellus arcu, accumsan et fringilla quis, pellentesque nec tortor. Curabitur eu ante nunc. Morbi et ligula dui. Pellentesque velit nibh, tempus at vehicula nec, gravida vitae ipsum. Proin justo nunc, interdum in diam vitae, feugiat tempus purus. Suspendisse potenti. Nunc urna metus, varius imperdiet lacus quis, pretium placerat nulla. Duis vel aliquet ante. Praesent nec arcu vitae odio dapibus molestie eget ut felis."
     ),
@@ -40,7 +40,7 @@ val listOfPuppies = listOf(
         birthdate = "01/18/1989",
         age = "1 yr 9 mo",
         profilePic = "https://cdn.pixabay.com/photo/2016/01/05/17/51/maltese-1123016_960_720.jpg",
-        weight = "16 lbs",
+        weight = "12 lbs",
         breed = "Maltese",
         bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique fermentum dignissim. Suspendisse ut risus tristique, accumsan est eu, sagittis ipsum. Integer et nunc sit amet leo maximus vestibulum. Etiam ut neque eget felis molestie auctor. Nam non libero purus. Aenean eu nibh efficitur, sollicitudin ipsum id, volutpat nisl. Maecenas nisi dui, semper ac scelerisque sit amet, luctus sit amet mi. Quisque tellus arcu, accumsan et fringilla quis, pellentesque nec tortor. Curabitur eu ante nunc. Morbi et ligula dui. Pellentesque velit nibh, tempus at vehicula nec, gravida vitae ipsum. Proin justo nunc, interdum in diam vitae, feugiat tempus purus. Suspendisse potenti. Nunc urna metus, varius imperdiet lacus quis, pretium placerat nulla. Duis vel aliquet ante. Praesent nec arcu vitae odio dapibus molestie eget ut felis."
     ),
@@ -60,7 +60,7 @@ val listOfPuppies = listOf(
         birthdate = "01/18/1989",
         age = "6 mo",
         profilePic = "https://cdn.pixabay.com/photo/2016/01/02/18/39/puppy-1118584__340.jpg",
-        weight = "16 lbs",
+        weight = "25 lbs",
         breed = "Bulldog",
         bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique fermentum dignissim. Suspendisse ut risus tristique, accumsan est eu, sagittis ipsum. Integer et nunc sit amet leo maximus vestibulum. Etiam ut neque eget felis molestie auctor. Nam non libero purus. Aenean eu nibh efficitur, sollicitudin ipsum id, volutpat nisl. Maecenas nisi dui, semper ac scelerisque sit amet, luctus sit amet mi. Quisque tellus arcu, accumsan et fringilla quis, pellentesque nec tortor. Curabitur eu ante nunc. Morbi et ligula dui. Pellentesque velit nibh, tempus at vehicula nec, gravida vitae ipsum. Proin justo nunc, interdum in diam vitae, feugiat tempus purus. Suspendisse potenti. Nunc urna metus, varius imperdiet lacus quis, pretium placerat nulla. Duis vel aliquet ante. Praesent nec arcu vitae odio dapibus molestie eget ut felis."
     ),
@@ -69,7 +69,7 @@ val listOfPuppies = listOf(
         sex = Sex.Male,
         birthdate = "01/18/1989",
         profilePic = "https://cdn.pixabay.com/photo/2019/05/27/19/08/puppy-4233378_960_720.jpg",
-        weight = "16 lbs",
+        weight = "19 lbs",
         age = "11 mo",
         breed = "Bulldog",
         bio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique fermentum dignissim. Suspendisse ut risus tristique, accumsan est eu, sagittis ipsum. Integer et nunc sit amet leo maximus vestibulum. Etiam ut neque eget felis molestie auctor. Nam non libero purus. Aenean eu nibh efficitur, sollicitudin ipsum id, volutpat nisl. Maecenas nisi dui, semper ac scelerisque sit amet, luctus sit amet mi. Quisque tellus arcu, accumsan et fringilla quis, pellentesque nec tortor. Curabitur eu ante nunc. Morbi et ligula dui. Pellentesque velit nibh, tempus at vehicula nec, gravida vitae ipsum. Proin justo nunc, interdum in diam vitae, feugiat tempus purus. Suspendisse potenti. Nunc urna metus, varius imperdiet lacus quis, pretium placerat nulla. Duis vel aliquet ante. Praesent nec arcu vitae odio dapibus molestie eget ut felis."
